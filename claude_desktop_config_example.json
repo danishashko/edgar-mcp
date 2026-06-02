@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "edgar": {
+      "command": "npx",
+      "args": ["-y", "edgar-mcp"],
+      "env": {
+        "SEC_USER_AGENT": "your-app-name your@email.com"
+      }
+    }
+  }
+}

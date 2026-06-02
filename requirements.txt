@@ -1,0 +1,4 @@
+# SEC EDGAR MCP Server Requirements
+# Install with: pip install -r requirements.txt
+
+mcp>=1.2.0

@@ -1,0 +1,49 @@
+{
+  "name": "edgar-mcp",
+  "version": "1.0.0",
+  "description": "SEC EDGAR MCP Server - U.S. company filings (10-K, 10-Q, 8-K), XBRL financials, and full-text filing search via Model Context Protocol. No API key required.",
+  "main": "bin/cli.js",
+  "bin": {
+    "edgar-mcp": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "python test_installation.py"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "sec",
+    "edgar",
+    "sec-edgar",
+    "filings",
+    "10-k",
+    "xbrl",
+    "financials",
+    "stocks",
+    "claude",
+    "ai",
+    "llm"
+  ],
+  "author": "Daniel Shashko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danishashko/edgar-mcp.git"
+  },
+  "homepage": "https://github.com/danishashko/edgar-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/danishashko/edgar-mcp/issues"
+  },
+  "engines": {
+    "node": ">=16",
+    "python": ">=3.10"
+  },
+  "files": [
+    "bin/",
+    "edgar_mcp.py",
+    "requirements.txt",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ]
+}
