@@ -161,19 +161,23 @@ def _resolve_cik(identifier: str) -> Optional[Dict[str, Any]]:
 def truncate_response(text: str, message: str = "") -> str:
     if len(text) <= CHARACTER_LIMIT:
         return text
-    return (
-        text[:CHARACTER_LIMIT]
-        + f"\n\n⚠️ Response truncated at {CHARACTER_LIMIT} characters. {message}"
+    suffix = (
+        f"\n\n⚠️ Response truncated at {CHARACTER_LIMIT} characters. {message}".rstrip()
     )
+    # Reserve room for the suffix so the total never exceeds CHARACTER_LIMIT.
+    return text[: max(0, CHARACTER_LIMIT - len(suffix))] + suffix
 
 
 def truncate_json_response(payload: str, message: str = "") -> str:
     if len(payload) <= CHARACTER_LIMIT:
         return payload
-    note = f"Response exceeded {CHARACTER_LIMIT} characters and was truncated. {message}".strip()
-    return json.dumps(
-        {"warning": note, "truncatedPreview": payload[:CHARACTER_LIMIT]}, indent=2
+    # Don't dump a giant mid-cut preview into context; return a small, valid-JSON
+    # message telling the caller to narrow the request. Keeps total output tiny.
+    note = (
+        f"Response was too large (~{len(payload)} characters) and was not returned in full. "
+        f"{message}".strip()
     )
+    return json.dumps({"error": "response_too_large", "message": note}, indent=2)
 
 
 def fmt_num(v: Any) -> str:

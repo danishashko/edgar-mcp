@@ -1,6 +1,6 @@
 {
   "name": "edgar-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "mcpName": "io.github.danishashko/edgar-mcp",
   "description": "SEC EDGAR MCP Server - U.S. company filings (10-K, 10-Q, 8-K), XBRL financials, and full-text filing search via Model Context Protocol. No API key required.",
   "main": "bin/cli.js",

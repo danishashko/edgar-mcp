@@ -5,6 +5,15 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-06-04
+
+### Fixed
+
+- Oversized responses no longer overflow the response size cap. Previously a
+  too-large JSON response could be returned larger than the limit (and dumped a
+  giant truncated preview into context); it now returns a small message asking
+  to narrow the request.
+
 ## [1.0.1] - 2026-06-02
 
 Packaging only. No runtime code changes.
