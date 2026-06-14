@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.danishashko/edgar-mcp",
-  "description": "U.S. SEC EDGAR company filings and XBRL financial data: company search, recent filings (10-K, 10-Q, 8-K), financial facts, and full-text filing search.",
+  "description": "SEC EDGAR filings (10-K, 10-Q, 8-K), XBRL financials, and full-text filing search. No API key.",
   "title": "SEC EDGAR",
   "repository": {
     "url": "https://github.com/danishashko/edgar-mcp",
@@ -15,7 +15,9 @@
       "identifier": "edgar-mcp",
       "version": "1.0.2",
       "runtimeHint": "npx",
-      "transport": { "type": "stdio" },
+      "transport": {
+        "type": "stdio"
+      },
       "environmentVariables": [
         {
           "name": "SEC_USER_AGENT",
